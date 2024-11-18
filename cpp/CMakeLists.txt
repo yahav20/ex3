@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
+
 project(my_project)
 
 # GoogleTest requires at least C++14
@@ -15,4 +16,5 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 add_executable(runTests math.cpp test.cpp)
-FetchContent_MakeAvailable(googletest)
+
+target_link_libraries(runTests gtest_main)
